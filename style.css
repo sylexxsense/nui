@@ -1,0 +1,285 @@
+/* =====================
+   GLOBAL STYLES
+===================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    color: #f0f0f0;
+
+    /* Static gradient background */
+    background: linear-gradient(135deg, #0f0f0f);
+}
+
+
+@keyframes gradientMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* =====================
+   HEADER
+===================== */
+header {
+    background: rgba(20,20,20,0.7);
+    backdrop-filter: blur(10px);
+    text-align: center;
+    padding: 25px 15px;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+}
+
+header h1 {
+    font-size: 2rem;
+    margin-bottom: 8px;
+    color: #fff;
+    letter-spacing: 1px;
+}
+
+nav a {
+    color: #ccc;
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+nav a:hover,
+nav a.active {
+    color: #ffffff;
+}
+
+/* =====================
+   MAIN CONTENT
+===================== */
+main {
+    flex: 1;
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 20px;
+    width: 100%;
+}
+
+/* =====================
+   PRODUCT GRID
+===================== */
+.products {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+}
+
+.product-card {
+    background: rgba(40,40,40,0.7);
+    backdrop-filter: blur(12px);
+    border-radius: 16px;
+    padding: 20px;
+    text-align: center;
+    width: 260px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+}
+
+.product-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.6);
+}
+
+.product-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 12px;
+    margin-bottom: 15px;
+}
+
+.product-card h2 {
+    font-size: 1.2rem;
+    margin-bottom: 8px;
+    color: #fff;
+}
+
+.product-card p {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #ffffff;
+    margin-bottom: 15px;
+}
+
+.product-card button {
+    background: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+.product-card button:hover {
+    background: #ffffff;
+}
+
+/* =====================
+   PRODUCT DETAIL PAGES
+===================== */
+.product-detail {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    align-items: center;
+    background: rgba(40,40,40,0.7);
+    backdrop-filter: blur(12px);
+    border-radius: 16px;
+    padding: 30px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+}
+
+.product-detail img {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 15px;
+    object-fit: cover;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+}
+
+.product-info {
+    flex: 1;
+    min-width: 280px;
+}
+
+.product-info h2 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+.product-info .price {
+    color: #ffffff;
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+}
+
+.back-link {
+    display: inline-block;
+    margin-top: 15px;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.back-link:hover {
+    text-decoration: underline;
+}
+
+/* =====================
+   LICENSE PAGE
+===================== */
+.license-info {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 30px;
+    background: rgba(40,40,40,0.7);
+    backdrop-filter: blur(12px);
+    border-radius: 16px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+}
+
+.license-info h2 {
+    margin-bottom: 15px;
+    font-size: 1.6rem;
+    color: #fff;
+}
+
+.license-info ul {
+    padding-left: 20px;
+    margin-top: 15px;
+}
+
+.license-info ul li {
+    margin: 10px 0;
+    color: #ccc;
+}
+
+/* =====================
+   FOOTER
+===================== */
+footer {
+    background: rgba(20,20,20,0.7);
+    backdrop-filter: blur(10px);
+    color: #aaa;
+    text-align: center;
+    padding: 20px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+}
+/* Neutral price color */
+.product-card p {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #ddd; /* light grey instead of orange */
+    margin-bottom: 15px;
+}
+
+/* Button styling */
+.product-card button {
+    background: linear-gradient(135deg, #2a2a2a, #444);
+    border: none;
+    padding: 12px 22px;
+    color: #f0f0f0;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 0.95rem;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+}
+
+.product-card button:hover {
+    background: linear-gradient(135deg, #444, #666);
+    box-shadow: 0 6px 18px rgba(0,0,0,0.7);
+    transform: translateY(-2px);
+}
+
+.product-card button:active {
+    background: #222;
+    transform: scale(0.97);
+}
+/* Buy Now button */
+.buy-now {
+    display: inline-block;
+    margin-top: 20px;
+    background: linear-gradient(135deg, #333, #555);
+    border: none;
+    padding: 14px 28px;
+    color: #f0f0f0;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1rem;
+    letter-spacing: 0.7px;
+    transition: all 0.3s ease;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.6);
+}
+
+.buy-now:hover {
+    background: linear-gradient(135deg, #555, #777);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.8);
+    transform: translateY(-3px);
+}
+
+.buy-now:active {
+    background: #222;
+    transform: scale(0.97);
+}
+
