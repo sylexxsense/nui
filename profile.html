@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Store</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #0a0a0a;
+      color: #ffffff;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+
+    .container {
+      background: #1a1a1a;
+      border-radius: 12px;
+      padding: 30px;
+      width: 360px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+      text-align: center;
+      font-size: 16px;
+    }
+
+    .header {
+      font-size: 20px;
+      margin-bottom: 20px;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+    }
+
+    .header::before {
+      content: "";
+      font-size: 20px;
+    }
+
+    /* All links white with no underline */
+    .container a {
+      color: #ffffff;
+      text-decoration: none;
+    }
+
+    .container a:hover {
+      color: #ffffff;
+      text-decoration: none;
+    }
+
+    .download-link {
+      font-size: 14px;
+      margin-bottom: 20px;
+      display: block;
+    }
+
+    .products {
+      text-align: left;
+      margin-bottom: 20px;
+    }
+
+    .products p {
+      font-size: 14px;
+      margin: 0 0 15px 0;
+      color: #cccccc;
+    }
+
+    .product-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 0;
+      border-bottom: 1px solid #2a2a2a;
+    }
+
+    .product-details {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .product-name {
+      font-weight: 600;
+      font-size: 15px;
+      color: #ffffff;
+    }
+
+    .product-desc {
+      font-size: 11px;
+      color: #999999;
+      font-style: italic;
+      margin-top: 2px;
+    }
+
+    .update-button {
+      background: #333333;
+      border: none;
+      color: #ffffff;
+      padding: 4px 10px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 12px;
+      font-weight: 600;
+    }
+
+    .update-button:hover {
+      background: #444444;
+    }
+
+    .activate-key {
+      margin-bottom: 20px;
+    }
+
+    .activate-key input {
+      width: 100%;
+      padding: 8px;
+      margin: 5px 0;
+      border: 1px solid #444444;
+      background: #222222;
+      color: #ffffff;
+      border-radius: 4px;
+      font-size: 14px;
+    }
+
+    .activate-key button {
+      background: #333333;
+      border: none;
+      color: #ffffff;
+      padding: 8px 10px;
+      border-radius: 4px;
+      cursor: pointer;
+      width: 100%;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .activate-key button:hover {
+      background: #444444;
+    }
+
+    .purchase-button {
+      background: #00cc00;
+      border: none;
+      color: #ffffff;
+      padding: 10px 0;
+      border-radius: 6px;
+      cursor: pointer;
+      width: 100%;
+      font-size: 16px;
+      font-weight: 600;
+      margin-bottom: 15px;
+    }
+
+    .purchase-button:hover {
+      background: #00b300;
+    }
+
+    .balance {
+      font-size: 13px;
+      margin: 10px 0;
+      color: #bbbbbb;
+    }
+
+    .footer {
+      font-size: 11px;
+      color: #888888;
+      margin-top: 15px;
+      line-height: 1.4;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">Products</div>
+    <a href="#" class="download-link">↓ Download Client</a>
+    <div class="products">
+      <p>These products are available for purchase and use.</p>
+
+      <div class="product-item">
+        <div class="product-details">
+          <span class="product-name">Primordial</span>
+          <span class="product-desc">An invite-only Legit/Semi-Rage cheat for CS2</span>
+        </div>
+        <a href="https://nullteam.mysellauth.com/product/primordial-30d" class="update-button">Purchase</a>
+      </div>
+
+      <div class="product-item">
+        <div class="product-details">
+          <span class="product-name">Compkiller</span>
+          <span class="product-desc">Competitive optimized performance</span>
+        </div>
+        <a href="https://nullteam.mysellauth.com/product/compkiller-30d" class="update-button">Purchase</a>
+      </div>
+
+      <div class="product-item">
+        <div class="product-details">
+          <span class="product-name">Eversio</span>
+          <span class="product-desc">An invite-only Legit/HvH cheat for CS2</span>
+        </div>
+        <a href="https://nullteam.mysellauth.com/product/eversio-30d" class="update-button">Purchase</a>
+      </div>
+
+      <div class="product-item">
+        <div class="product-details">
+          <span class="product-name">Astral</span>
+          <span class="product-desc">An invite-only Legit/HvH cheat for CS2</span>
+        </div>
+        <a href="https://nullteam.mysellauth.com/product/astral-30d" class="update-button">Purchase</a>
+      </div>
+
+      <div class="product-item">
+        <div class="product-details">
+          <span class="product-name">Fatality</span>
+          <span class="product-desc">An invite-only Legit/HvH cheat for CS2</span>
+        </div>
+        <a href="https://nullteam.mysellauth.com/product/fatal" class="update-button">Purchase</a>
+      </div>
+
+      <div class="product-item">
+        <div class="product-details">
+          <span class="product-name">Gamesense</span>
+          <span class="product-desc">An famous invite-only Legit/HvH cheat for CS2</span>
+        </div>
+        <a href="https://nullteam.mysellauth.com/product/gamesense-30d" class="update-button">Purchase</a>
+      </div>
+
+    </div>
+
+    <div class="footer">
+      By purchasing our products, you agree to our Terms of Service, Privacy Policy, and Refund Policy.
+      After purchasing a product u will need to put in your license key in the client to redeem the key.
+    </div>
+  </div>
+</body>
+</html>
