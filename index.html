@@ -105,14 +105,28 @@
     }
 
     footer {
-      width: 100%;
-      text-align: center;
-      padding: 20px 0;
-      font-size: 0.75rem;
-      color: #888888;
-      margin-top: auto;
-      font-weight: 300;
-    }
+  position: fixed;          /* Sticks to bottom of screen */
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  background: #0a0a0a;      /* Same as page background */
+  color: #aaa;              /* Subtle gray text */
+  font-size: 0.9rem;
+  padding-bottom: 10px;
+  line-height: 1.5;
+}
+
+footer a {
+  color: #bbb;
+  text-decoration: none;
+  border-bottom: 1px solid #444;  /* Thin underline like your image */
+}
+
+footer a:hover {
+  color: #fff;
+  border-bottom-color: #888;
+}
   </style>
 </head>
 <body>
@@ -125,7 +139,7 @@
       <h1>Dominate with Us</h1>
       <p>Take your gaming experience to the next level with Nullteam's premium software.</p>
       <div class="button-container">
-  <a href="profile.html" target="_blank">
+        <a href="profile.html" target="_blank">
   <button class="buy-button">Buy now</button>
 </a>
         <a href="https://discord.gg/Q79jdGKf" target="_blank" class="discord-button">
@@ -138,12 +152,16 @@
     </div>
   </main>
 
-  <footer>
+<footer>
+  <p>
+    <a href="tos.html">Terms of Service</a> • 
+    <a href="privacy.html">Privacy Policy</a> • 
+    <a href="contact.html">Contacts</a>
+  </p>
+  <p>© 2025 nullteam.net</p>
+</footer>
 
-    © 2025 Nullteam.net
-  </footer>
+
 
 </body>
-
 </html>
-
