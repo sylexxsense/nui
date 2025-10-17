@@ -1,254 +1,290 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Zenith</title>
-  <style>
-    /* Reset */
-    * { margin: 0; padding: 0; box-sizing: border-box; }
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>nullteam.net</title>
 
-    body {
-      font-family: 'Poppins', Arial, sans-serif;
-      background: #1f1f2e;
-      color: #f1f1f1;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-start;
-      align-items: center;
-    }
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 
-    header {
-      width: 100%;
-      padding: 15px 0;
-      text-align: center;
-      background: rgba(255, 255, 255, 0.05);
-      backdrop-filter: blur(5px);
-      font-size: 1.1rem;
-      font-weight: 500;
-      letter-spacing: 1px;
-      color: #f1f1f1;
-    }
+<style>
+:root{
+  --bg:#0f1113;
+  --muted:#9aa0a6;
+  --accent-blue:#167ef8;
+}
 
-    header a {
-      color: #f1f1f1;
-      text-decoration: none;
-      margin: 0 15px;
-      transition: color 0.3s;
-    }
+/* Reset */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family:"Inter","Poppins",system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial;
+  background: radial-gradient(800px 600px at 10% 20%, rgba(200,160,60,0.08), transparent 8%),
+              radial-gradient(700px 550px at 92% 24%, rgba(150,80,200,0.07), transparent 8%),
+              linear-gradient(180deg,#0b0c0d 0%, #151518 100%);
+  color:#e9eef6;
+  -webkit-font-smoothing:antialiased;
+}
 
-    header a:hover {
-      color: #ffffff;
-    }
+/* Site wrapper with fade-in */
+.site {
+  opacity: 0;
+  animation: siteFadeIn 0.3s ease-in-out forwards;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
 
-    main {
-      width: 90%;
-      max-width: 900px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      padding: 80px 0;
-      text-align: center;
-    }
+/* Topbar */
+.topbar{
+  position: relative;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:12px 28px;
+  z-index:40;
+}
+.logo{
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+.logo .dot{
+  width:22px;height:22px;border-radius:50%;
+  background:linear-gradient(145deg,#b3b3b3,#ffffff00);
+  box-shadow:0 6px 18px rgba(0,0,0,0.6);
+  display:flex;align-items:center;justify-content:center;
+}
+.userzone{
+  background:rgba(255,255,255,0.06);
+  color:#fff;
+  padding:6px 12px;
+  border-radius:6px;
+  font-size:13px;
+  font-weight:600;
+  box-shadow:0 4px 14px rgba(0,0,0,0.6);
+  text-decoration:none;
+}
 
-    .left-content h1 {
-      font-size: 2.5rem;
-      margin-bottom: 20px;
-      font-weight: 700;
-      color: #ffffff;
-    }
+/* Main content */
+main {
+  flex: 1; /* pushes footer down */
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  padding:56px 28px 140px 28px;
+  text-align:center;
+}
 
-    .left-content p {
-      font-size: 1.1rem;
-      line-height: 1.6;
-      margin-bottom: 40px;
-      color: #ccc;
-    }
+h1{
+  font-family:"Poppins", "Inter", sans-serif;
+  font-size:72px;
+  line-height:1;
+  margin:0;
+  font-weight:800;
+  letter-spacing:-1px;
+  max-width:980px;
+}
+.lead{
+  margin-top:18px;
+  color:var(--muted);
+  font-size:16px;
+  max-width:720px;
+}
+.cta{margin-top:28px;}
+.btn{
+  display:inline-block;
+  background:linear-gradient(180deg,#2288ff,#156be8);
+  color:#fff;
+  padding:10px 18px;
+  border-radius:8px;
+  font-weight:600;
+  text-decoration:none;
+  box-shadow:0 6px 18px rgba(21,110,235,0.2), inset 0 -1px 0 rgba(255,255,255,0.06);
+  font-size:15px;
+}
 
-    .button-container {
-      display: flex;
-      gap: 15px;
-      flex-wrap: wrap;
-      justify-content: center;
-      margin-bottom: 50px;
-    }
+/* Features */
+.features{
+  margin-top:86px;
+  width:100%;
+  max-width:1200px;
+  text-align:center;
+}
+.section-title{
+  font-family:"Poppins",sans-serif;
+  font-size:34px;
+  font-weight:700;
+  margin-bottom:36px;
+}
+.feat-row{
+  display:flex;
+  gap:38px;
+  justify-content:space-between;
+  align-items:flex-start;
+  padding:0 28px;
+  box-sizing:border-box;
+}
+.feat{
+  width:calc(33.333% - 24px);
+  min-width:220px;
+}
+.icon-wrap{display:flex;justify-content:center;margin-bottom:18px;}
+.icon{
+  width:110px;height:110px;border-radius:999px;
+  display:flex;align-items:center;justify-content:center;
+  box-shadow:0 20px 50px rgba(0,0,0,0.6), 0 2px 8px rgba(0,0,0,0.6);
+  margin:0 auto;
+}
+.icon.check{background:radial-gradient(circle at 30% 30%, #6ef0b1, #00b36a 60%);}
+.icon.heart{
+  background:linear-gradient(135deg,#c85bf1 0%,#ff6fa9 100%);
+  width:92px;height:92px;border-radius:18px;
+  box-shadow:0 25px 60px rgba(168,68,206,0.25);
+}
+.icon.star{
+  background:linear-gradient(180deg,#ffd66a,#ffb84a);
+  width:110px;height:110px;border-radius:18px;
+  transform:rotate(-10deg);
+}
+.feat h3{
+  font-size:20px;
+  margin:8px 0;
+  font-weight:700;
+  color:#fff;
+  font-family:"Poppins",sans-serif;
+}
+.feat p{
+  color:var(--muted);
+  font-size:13px;
+  line-height:1.5;
+  margin:0 auto;
+  max-width:260px;
+}
 
-    .btn {
-      padding: 12px 25px;
-      font-size: 1rem;
-      font-weight: 600;
-      border-radius: 8px;
-      border: none;
-      cursor: pointer;
-      transition: all 0.3s;
-      text-decoration: none;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-    }
+/* Footer */
+/* Footer stays at the bottom and all links in one row */
+footer {
+  margin-top: auto; /* pushes footer to bottom */
+  padding: 20px 40px; /* slightly wider padding */
+  display: flex;
+  align-items: center;
+  justify-content: center; /* center content */
+  gap: 24px; /* space between links and copyright */
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.06));
+  color: var(--muted);
+  font-size: 13px;
+  flex-wrap: wrap; /* allows wrapping on small screens */
+  width: 100%; /* full width */
+  box-sizing: border-box; /* include padding in width */
+}
 
-    .buy-button {
-      background: rgba(255,255,255,0.05);
-      color: #ffffff;
-    }
+/* Links inside footer */
+footer .links {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
 
-    .buy-button:hover {
-      background: rgba(255,255,255,0.05);
-    }
+footer a {
+  color: var(--muted);
+  text-decoration: none;
+}
 
-    .download-button {
-      background: rgba(255,255,255,0.05);
-      color: #fff;
-    }
 
-    .download-button:hover {
-      background: rgba(255,255,255,0.05);
-    }
 
-    .discord-button {
-      background: rgba(255,255,255,0.05);
-      color: #fff;
-      padding: 10px 20px;
-    }
+/* Fade-in animation */
+@keyframes siteFadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
 
-    .discord-button img {
-      height: 18px;
-    }
+/* Responsive */
+@media(max-width:980px){
+  h1{font-size:48px;}
+  .feat-row{flex-direction:column;align-items:center;}
+  .feat{width:100%;max-width:420px;}
+  .icon{width:92px;height:92px;}
+  .icon.star{transform:rotate(0deg);}
+}
+</style>
+</head><link rel="icon" type="image/x-icon" href="gruppe.ico">
 
-    .discord-button:hover {
-      background:rgba(255,255,255,0.05);
-    }
-
-    /* Feature list styling */
-    .features {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 25px;
-      width: 100%;
-      margin-bottom: 80px;
-    }
-
-    .feature-item {
-      background: rgba(255,255,255,0.05);
-      padding: 25px 20px;
-      border-radius: 12px;
-      transition: transform 0.3s, background 0.3s;
-    }
-
-    .feature-item:hover {
-      transform: translateY(-5px);
-      background: rgba(255, 255, 255, 0.1);
-    }
-
-    .feature-item h3 {
-      font-size: 1.3rem;
-      margin-bottom: 10px;
-      color: #ffffff;
-    }
-
-    .feature-item p {
-      font-size: 0.95rem;
-      color: #ccc;
-      line-height: 1.4;
-    }
-
-    footer {
-      width: 100%;
-      text-align: center;
-      padding: 15px 0;
-      background: rgba(0,0,0,0.6);
-      color: #aaa;
-      font-size: 0.9rem;
-    }
-
-    footer a {
-      color: #00d4ff;
-      text-decoration: none;
-    }
-
-    footer a:hover {
-      text-decoration: underline;
-    }
-
-  </style>
-</head>
 <body>
-  <header>
-    <a href="#">CHEAT IS OUTDATED AS OF RIGHT NOW</a>
-    <a href="#"></a>
-    <a href="#"></a>
-    <a href="#"></a>
-  </header>
-
-  <main>
-    <div class="left-content">
-      <h1>Elevate Your Game with Zenith</h1>
-      <p>Experience next-level gaming with Zenith's premium software suite. Power up your skills, dominate the competition, and enjoy a seamless experience.</p>
-      <div class="button-container">
-        <a href="https://zenithtechcs2.mysellauth.com/product/zenith-30d" class="btn buy-button">Buy Now</a>
-             <a href="Zenith.exe" class="btn download-button">Download Client</a>
-        <a href="https://discord.gg/6xuCz75gPQ" target="_blank" class="btn discord-button">
-          <img src="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/discord-white-icon.svg" alt="Discord"> Discord
-        </a>
+<div class="site">
+  <div class="topbar">
+    <div class="logo">
+      <div class="dot" aria-hidden="true">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" style="transform:translateY(-1px)">
+          <path d="M12 3C7.03 3 3 7.03 3 12s4.03 9 9 9 9-4.03 9-9S16.97 3 12 3z" stroke="rgba(255,255,255,0.85)" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M12 7v5l3 3" stroke="rgba(255,255,255,0.85)" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
       </div>
     </div>
+    <a class="userzone" href="profile.html">User Zone</a>
+  </div>
 
-    <div class="features">
-      <div class="feature-item">
-        <h3>Aimbot</h3>
-        <p>RCS Prediction Experimental mode Aimkey smoothness fov show fov circle target line target dot</p>
-      </div>
-      <div class="feature-item">
-        <h3>Player Esp</h3>
-        <p>Bounding Box
-Skeleton
-Health Bar
-Name
-Weapon
-Distance
-OOF Arrows
-Chams
-Show Distance
-Show Bomb</p>
-      </div>
-      <div class="feature-item">
-        <h3>World ESP</h3>
-        <p>Smoke Grenades
-Smoke Dome
-Molotov/Incendiary
-Molotov Bounds
-Weapon Drops
-Drop Bounds
-Bomb</p>
-      </div>
-      <div class="feature-item">
-        <h3>Exploits</h3>
-        <p>Spectator List
-
-Show Spectators
-Show Names</p>
-      </div>
-      <div class="feature-item">
-        <h3>Misc</h3>
-        <p>Sniper crosshair with customizable features vsync disable wait</p>
-      </div>
-      <div class="feature-item">
-        <h3>World</h3>
-        <p>Night Mode Night mode strength</p>
-      </div>
-    <div class="feature-item">
-        <h3>Regular Updates</h3>
-        <p>We constantly add new features and improvements to keep you ahead.</p>
-      </div>
+  <main class="wrap">
+    <h1>Your favorite DLC<br>provider</h1>
+    <div class="lead">Experience the advantage over your opponents with us.</div>
+    <div class="cta">
+      <a class="btn" href="profile.html">Go to User Zone</a>
     </div>
+
+    <section class="features">
+      <div class="section-title">More than DLC</div>
+      <div class="feat-row">
+        <div class="feat">
+          <div class="icon-wrap">
+            <div class="icon check">
+              <svg width="56" height="56" viewBox="0 0 24 24" fill="none">
+                <path d="M6 12.2l3.2 3.2L18 7.6" stroke="#ffffff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+          </div>
+          <h3>Maximum convenience</h3>
+          <p>All our services are provided with maximum care for the user.</p>
+        </div>
+
+        <div class="feat">
+          <div class="icon-wrap">
+            <div class="icon heart">
+              <svg width="48" height="48" viewBox="0 0 24 24" fill="none">
+                <path d="M12.1 7.8c-.8-1.1-2.4-1.4-3.5-.6-1.1.8-1.4 2.4-.6 3.5l4.1 5.2 4.1-5.2c.8-1.1.5-2.7-.6-3.5-1.1-.8-2.7-.5-3.5.6z" fill="white"/>
+              </svg>
+            </div>
+          </div>
+          <h3>Friendly support</h3>
+          <p>Solve all your questions in a jiffy</p>
+        </div>
+
+        <div class="feat">
+          <div class="icon-wrap">
+            <div class="icon star">
+              <svg width="56" height="56" viewBox="0 0 24 24" fill="none">
+                <path d="M12 16l3.09 1.75-.63-2.8 2.22-1.94-2.96-.25L12 10l-1.72 2.76-2.96.25 2.22 1.94-.63 2.8L12 16z" fill="#fff"/>
+              </svg>
+            </div>
+          </div>
+          <h3>Excellence in all things</h3>
+          <p>Full functionality in all aspects, forget about what you were missing.</p>
+        </div>
+      </div>
+    </section>
   </main>
+
+  <footer>
+    <nav class="links">
+      <a href="#">Terms of Use</a>
+      <a href="#">Privacy</a>
+      <a href="#">Refund Policy</a>
+      <span></span>
+    </nav>
+    <div class="copyright">©2025 nullteam.net All rights reserved.</div>
+  </footer>
+</div>
 </body>
 </html>
-
-
-
-
-
